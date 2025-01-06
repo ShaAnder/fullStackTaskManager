@@ -1,2 +1,5 @@
 psycopg2
 sqlalchemy==1.4.46
+flask==2.2.0
+werkzeug==2.2.0
+Flask-SQLAlchemy<3
