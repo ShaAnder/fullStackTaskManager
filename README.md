@@ -1,3 +1,5 @@
+## ABOUT
+
 A small Task manager application utilizing a flask base with sql for the backend and a materialize framework for the front end. 
 
 The purpose of this app was to demonstrate knowledge of full stack technologies as part of my Diploma in full stack software development.
@@ -22,6 +24,9 @@ pip install -r requirements.txt
 ```
 
 Creation steps (mainly for my own note):
+
+
+## CREATING THE BACKEND
 
 (1) FIRST: I created the file base with the following structure:
 
@@ -70,3 +75,11 @@ db.create_all()
 ```
 
 Edit if we edit the models later we need to remigrate the models later
+Also to check if the tables populated correctly we use:
+
+```
+psql -d taskmanager
+\dt
+```
+
+## CREATING THE FRONTEND

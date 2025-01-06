@@ -6,11 +6,50 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <!-- stylesheets -->
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/vendor/bootstrap/bootstrap.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/vendor/bootstrap/bootstrap.min.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/vendor/bootstrap-icons/bootstrap-icons.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='/css/style.css')}}"/>
     </head>
     <body>
-        Hello World!
-        
-        <script src="" async defer></script>
+        <header>   
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="{{ url_for('home') }}">Manage.io</a>
+                <!-- Desktop Navigation -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="{{ url_for('home') }}">Task Manager</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        </li>
+                        <li class="nav-item d-none d-lg-block">
+                            <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" id="mobileMenuButton" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Mobile Dropdown -->
+                <div class="d-lg-none mobile-menu" id="mobileMenu" style="display: none;">
+                    <ul class="list-unstyled">
+                        <li><a class="nav-link" href="#">About</a></li>
+                        <li><a class="nav-link" href="#">Task Manager</a></li>
+                        <li><a class="nav-link" href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="container">
+            {% block maincontent %}
+            {% endblock %}
+        </main>
+        <script src="{{url_for('static', filename='js/vendor/bootstrap/bootstrap.bundle.min.js')}}" async defer></script>
+        <script src="{{url_for('static', filename='js/script.js')}}" async defer></script>
     </body>
 </html>

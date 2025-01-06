@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* General Navbar styling */
+
+.navbar {
+    display: flex;
+    height: 10%;
+}
+
+.navbar-brand {
+    margin-left: 3rem;
+    font-size: 2rem;
+    padding-top: 0;
+
+}
+
+.navbar-collapse {
+    justify-content: right;
+    margin-right: 2rem;
+}
+
+.navbar-collapse li {
+    font-size: 1.2rem;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+/* Mobile menu nav styling */
+
+.mobile-menu {
+    position: absolute;
+    top: 100%; /* Position it below the navbar */
+    left: 0;
+    width: 100%;
+    z-index: 1050; /* Ensure it appears above other elements */
+    background-color: #f8f9fa;
+}
+
+
+.mobile-menu .nav-link {
+    margin-right: 1.5rem;
+    padding: 15px 10px;
+    font-size: 1.5rem;
+    color: #333;
+    display: block;
+    text-align: right;
+    }
+
+.mobile-menu .nav-link:hover {
+    background-color: #f8f9fa;
+    text-decoration: none;
+    }
+
+.navbar-toggler {
+    margin-right: 2rem;
+    font-size: 1.5rem;
+    outline: none!important;
+    box-shadow: none!important;
+    }
