@@ -14,9 +14,9 @@ Materialize
 Flask
 SQLAlchemy
 
-As this app uses an older version of sql alchemy to get it to run, when installing packages the following pip install command is
-recommended
+As this app uses older packages to run, as some are not supported with newer flask, the following pip command is required
+to get the app to run in a local setting
 
 ```
-pip3 install 'Flask-SQLAlchemy<3' psycopg2 sqlalchemy==1.4.46
+pip install -r requirements.txt
 ```
