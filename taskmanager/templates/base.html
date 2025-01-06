@@ -38,9 +38,9 @@
                 <!-- Mobile Dropdown -->
                 <div class="d-lg-none mobile-menu" id="mobileMenu" style="display: none;">
                     <ul class="list-unstyled">
-                        <li><a class="nav-link" href="#">About</a></li>
-                        <li><a class="nav-link" href="#">Task Manager</a></li>
-                        <li><a class="nav-link" href="#">Contact</a></li>
+                        <li><a class="nav-link" href="{{ url_for('home') }}">Task Manager</a></li>
+                        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                        <li><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </nav>
