@@ -20,3 +20,53 @@ to get the app to run in a local setting
 ```
 pip install -r requirements.txt
 ```
+
+Creation steps (mainly for my own note):
+
+(1) FIRST: I created the file base with the following structure:
+
+taskmanager
+    |
+    |templates
+        |
+        |base.html
+    __init__.py
+    models.py
+    routes.py
+.gitignore
+env.py
+README.md
+requirements.txt
+run.py
+
+The base contains our html template for all pages
+The models contains our database class models
+Routes are for our page routing
+env.py handles our environment variables including connection settings
+our run.py handles running our app
+
+We added the requirements.txt as an alternative to the lesson plans solution as
+that was installing a newer conflicting version of flask
+
+(2) SECOND: I set the db and migrated the models over to the database with python, this was fairly straight forward and required us to just login, create a database and migrate
+
+Set and login to psql
+```
+set_pg
+psql
+```
+Create and change to our DB
+```
+CREATE DATABASE taskmanager;
+\c taskmanager
+\q
+```
+Use python to migrate
+```
+(in cli) 
+python3
+from taskmanager import db
+db.create_all()
+```
+
+Edit if we edit the models later we need to remigrate the models later

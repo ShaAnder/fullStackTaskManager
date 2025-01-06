@@ -5,11 +5,11 @@ from taskmanager import db
 
 class Category(db.Model):
     # schema for the category model
-    id = db.Column(db.Integery, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     # string = #chars allows, unique = can't be duped, nullable = can't be empty
-    category_name = db.column(db.String(25), unique=True, nullable=False)
+    category_name = db.Column(db.String(25), unique=True, nullable=False)
     # here we are linking tasks table to the category table, relationship is a hidden
-    # column that won't be displayed unlike column. 
+    # Column that won't be displayed unlike Column. 
     # Task = links to task table
     # backref = links it back to this table, 
     # cascade all, delete = select and delete all records associated with the cascade
@@ -22,22 +22,22 @@ class Category(db.Model):
         return self.category_name
 
 
-class Task(db.model):
+class Task(db.Model):
     #schema for the table model
-    id = db.Column(db.Integery, primary_key=True)
-    task_name = db.column(db.String(50), unique=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    task_name = db.Column(db.String(50), unique=True, nullable=False)
     # text = allows for longer strings, similar to text area
-    task_description = db.column(db.text, nullable=False)
+    task_description = db.Column(db.Text, nullable=False)
     # bool for true false on the tast, default = default setting
-    is_urgent = db.column(db.Boolean, default=False, nullable=False)
+    is_urgent = db.Column(db.Boolean, default=False, nullable=False)
     # using datetime here, unlike the followalong, want to be able to set short
     # term tasks that take hours to complete as well as long form date deadlines
-    due_date = db.column(db.Datetime, nullable=False)
+    due_date = db.Column(db.DateTime, nullable=False)
     # integer = number, foreignkey = links to category, points to id primarykey
     # ondelete="CASCADE" => we want to be able to delete all tasks associated with
     # one category, but not the reverse, CASCADE achieves this by removing all associated
     # tasks when the singular category (foreign linked to primary) key is deleted
-    category_id = db.column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
+    category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete="CASCADE"), nullable=False)
 
     def __repr__(self):
         # __repr__ to represent itself in the form of a string
