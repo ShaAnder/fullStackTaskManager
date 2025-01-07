@@ -4,12 +4,20 @@ from taskmanager.models import Category, Task
 
 @app.route("/")
 def home():
+    return render_template("add-items.html")
+
+@app.route("/tasks")
+def tasks():
     return render_template("tasks.html")
 
-@app.route("/about")
-def contact():
-    return render_template("contact.html")
+@app.route("/add_task", methods=["GET", "POST"])
+def add_category():
+    return render_template("add-category.html")
+
+@app.route("/add_task", methods=["GET", "POST"])
+def add_task():
+    return render_template("add-category.html")
 
 @app.route("/contact")
-def about():
-    return render_template("about.html")
+def contact():
+    return render_template("contact.html")

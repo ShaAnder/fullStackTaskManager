@@ -20,10 +20,10 @@
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link" href="{{ url_for('home') }}">Task Manager</a>
+                            <a class="nav-link" href="{{ url_for('home') }}">Add A Task</a>
                         </li>
                         <li class="nav-item d-none d-lg-block">
-                            <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                            <a class="nav-link" href="{{ url_for('tasks') }}">Your Tasks</a>
                         </li>
                         <li class="nav-item d-none d-lg-block">
                             <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
@@ -38,8 +38,8 @@
                 <!-- Mobile Dropdown -->
                 <div class="d-lg-none mobile-menu" id="mobileMenu" style="display: none;">
                     <ul class="list-unstyled">
-                        <li><a class="nav-link" href="{{ url_for('home') }}">Task Manager</a></li>
-                        <li><a class="nav-link" href="{{ url_for('about') }}">About</a></li>
+                        <li><a class="nav-link" href="{{ url_for('home') }}">Add A Task</a></li>
+                        <li><a class="nav-link" href="{{ url_for('tasks') }}">Your Tasks</a></li>
                         <li><a class="nav-link" href="{{ url_for('contact') }}">Contact</a></li>
                     </ul>
                 </div>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block maincontent %}
+
+
+<div class="tasks-title">
+    <h2>Task Manager</h2>
+    <p>
+    Welcome to the task manager, a simple task managing interface, 
+    just hit add and get ready to start organizing your life on task at a time.
+    <br>
+    If you already have some tasks listed click <a href="{{url_for('tasks')}}">here</a> to view your tasks!
+    </p>
+    
+</div>
+<div class="task-buttons">
+    <a href="{{ url_for('add_category') }}" style="text-decoration:none">
+        <button class="btn task-button">
+            <i class="bi bi-plus"></i>
+            <p>New Category</p>
+        </button>
+    </a>
+    <a href="{{ url_for('add_task') }}" style="text-decoration:none">
+    <button class="btn task-button">
+        <i class="bi bi-plus"></i>
+        <p>New Task</p>
+    </button>
+    </a>
+</div>
+
+
+{% endblock %}
