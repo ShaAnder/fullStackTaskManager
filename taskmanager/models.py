@@ -30,9 +30,7 @@ class Task(db.Model):
     task_description = db.Column(db.Text, nullable=False)
     # bool for true false on the tast, default = default setting
     is_urgent = db.Column(db.Boolean, default=False, nullable=False)
-    # using datetime here, unlike the followalong, want to be able to set short
-    # term tasks that take hours to complete as well as long form date deadlines
-    due_date = db.Column(db.DateTime, nullable=False)
+    due_date = db.Column(db.Date, nullable=False)
     # integer = number, foreignkey = links to category, points to id primarykey
     # ondelete="CASCADE" => we want to be able to delete all tasks associated with
     # one category, but not the reverse, CASCADE achieves this by removing all associated

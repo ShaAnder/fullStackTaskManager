@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+/* roots */ 
+
+:root {
+    --main-background: rgb(60, 136, 211); 
+}
+
 /* General Navbar styling */
 
 .navbar {
@@ -125,7 +131,7 @@
 }
 
 .task-button:hover {
-    background-color: #58acff; 
+    background-color: var(--main-background);
 }
 
 /* Task and category form field*/
@@ -145,3 +151,5 @@
 .form-wrapper {
     margin-bottom: 2rem;
 }
+
+

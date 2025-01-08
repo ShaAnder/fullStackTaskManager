@@ -1,8 +1,45 @@
 {% extends "base.html" %}
 {% block maincontent %}
 
+<div class="tasks-title">
+    <h2>Add A task</h2>
+    <p>
+    To Add a task simply type the task name you want into the field and hit submit!
+    <br>
+    If you already have some categories they will be displayed below!
+    </p>
+    
+</div>
 
-
+<div class="d-flex justify-content-center form-wrapper">
+    <form class="w-50" method="POST" action="{{ url_for('add_task')}}">
+        <div class="mb-5">
+            <label for="task_name">Task Name</label>
+            <input id="task_name" name="task_name" minlength="5" maxlength="50" type="text" class="form-control form-input" placeholder="Task Name" required>
+        </div>
+        <div class="mb-3">
+            <label for="task_description">Task Name</label>
+            <textarea id="task_description" name="task_description" minlength="5" maxlength="200" type="text" class="form-control form-input" placeholder="Task Description" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="startDate">Start</label>
+            <input id="startDate" class="form-control" type="date" />
+        </div>
+        <div class="mb-3">
+            <label for="is_urgent">Is Urgent</label>
+            <input id="is_urgent" name="is_urgent" type="checkbox" class="form-control form-input">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" id="select_category" aria-label="Category selector">
+                <option selected>Choose Category</option>
+                {% for category in categories %}
+                <option value="{{category.id}}">{{category.category_name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+    </form>
+</div>
 
 
 {% endblock %}
