@@ -1,9 +1,25 @@
 {% extends "base.html" %}
 {% block maincontent %}
 
-
-<div>
-    <h2>Add Categories</h2>  
+<div class="tasks-title">
+    <h2>Add A Category</h2>
+    <p>
+    To Add a category simply type the category name you want into the field and hit submit!
+    <br>
+    If you already have some categories added click <a href="#">here</a> to view them!
+    </p>
+    
 </div>
+
+<div class="d-flex justify-content-center vh-100">
+    <form class="w-50" method="POST" action="{{ url_for('add_category')}}">
+        <div class="mb-3">
+            <input id="category_name" name="category_name" minlength="3" maxlength="25" type="text" class="form-control form-input" placeholder="Category Name" required>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+    </form>
+</div>
+
+
 
 {% endblock %}
