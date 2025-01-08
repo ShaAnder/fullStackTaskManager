@@ -141,3 +141,7 @@
     display: block;
     margin: 20px auto 0;
 }
+
+.form-wrapper {
+    margin-bottom: 2rem;
+}

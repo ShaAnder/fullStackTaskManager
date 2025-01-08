@@ -6,12 +6,12 @@
     <p>
     To Add a category simply type the category name you want into the field and hit submit!
     <br>
-    If you already have some categories added click <a href="#">here</a> to view them!
+    If you already have some categories they will be displayed below!
     </p>
     
 </div>
 
-<div class="d-flex justify-content-center vh-100">
+<div class="d-flex justify-content-center form-wrapper">
     <form class="w-50" method="POST" action="{{ url_for('add_category')}}">
         <div class="mb-3">
             <input id="category_name" name="category_name" minlength="3" maxlength="25" type="text" class="form-control form-input" placeholder="Category Name" required>
@@ -20,6 +20,20 @@
     </form>
 </div>
 
-
+<div class="row">
+    {% for category in categories %}
+    <div class="col-lg-3 col-md-6 col-sm-12">
+        <div class="card text-light" style="width: 100%; height:150px">
+            <div class="card-body bg-primary">
+                <h5 class="card-title" style="text-align:center; margin-top: 1rem; margin-bottom:1.5rem">{{ category.category_name }}</h5>
+                <div style="width:100%; display:flex; justify-content:center;">
+                    <a href="{{ url_for('edit_category', category_id=category.id) }}" class="btn text-light bg-success card-link" style="width:100px;">Edit</a>
+                    <a href="{{ url_for('delete_category', category_id=category.id) }}" class="btn text-light bg-danger card-link" style="width:100px;">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 {% endblock %}
