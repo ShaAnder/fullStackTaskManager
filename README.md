@@ -1,6 +1,10 @@
 ## ABOUT
 
+
+
 A small Task manager application utilizing a flask base with sql for the backend and a materialize framework for the front end. 
+
+View deployed app [here](https://full-stack-task-manager-33d103367644.herokuapp.com) (currently down for bug fixing)
 
 The purpose of this app was to demonstrate knowledge of full stack technologies as part of my Diploma in full stack software development.
 
